@@ -1,0 +1,30 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.PetVitaOriginal" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Cor primária do tema -->
+        <item name="colorPrimaryDark">@color/pineGreen</item>
+        <!-- Cor primária mais escura -->
+        <item name="colorPrimary">@color/shamrockGreen</item>
+        <!-- Cor de destaque (para botões, sliders, etc.) -->
+        <item name="colorAccent">@color/cambridgeBlue</item>
+        <!-- Cor de fundo da janela -->
+        <item name="android:windowBackground">@color/white</item>
+        <!-- Cor do texto padrão -->
+        <item name="android:textColor">@color/black</item>
+        <!-- Cor dos botões padrão -->
+        <item name="android:buttonTint">@color/brownSugar</item>
+    </style>
+
+    <!-- Tema personalizado para botões -->
+    <style name="ButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:backgroundTint">@color/shamrockGreen</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- Tema personalizado para textos -->
+    <style name="TextStyle" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textColor">@color/pineGreen</item>
+    </style>
+
+    <style name="Theme.PetVitaOriginal" parent="Base.Theme.PetVitaOriginal" />
+</resources>

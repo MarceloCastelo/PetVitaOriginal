@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "154097214013",
+    "project_id": "petvitaoriginal",
+    "storage_bucket": "petvitaoriginal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:154097214013:android:df6f3ece6f2b1aec350054",
+        "android_client_info": {
+          "package_name": "com.example.petvitaoriginal"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8ibiym0Cg61xLQ_KMcuJzCw3i4dAHl8M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
