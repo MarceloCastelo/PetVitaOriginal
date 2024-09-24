@@ -4,14 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -35,13 +31,26 @@ public class MainActivity extends AppCompatActivity {
     List<DataClass> dataList;
     MyAdapter adapter;
     SearchView searchView;
-
+    FirebaseAuth firebaseAuth; // Declaração do FirebaseAuth
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Inicializa o FirebaseAuth
+        firebaseAuth = FirebaseAuth.getInstance();
+
+        // Verifica se o usuário está logado
+        if (firebaseAuth.getCurrentUser() == null) {
+            // Se o usuário não estiver logado, redireciona para a LoginActivity
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish(); // Fecha a MainActivity para que o usuário não volte ao clicar em "voltar"
+            return; // Interrompe a execução da onCreate se o usuário não estiver logado
+        }
+
+        // Configuração dos componentes da interface
         fab = findViewById(R.id.fab);
         recyclerView = findViewById(R.id.recyclerView);
         searchView = findViewById(R.id.search);
@@ -57,44 +66,43 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
 
         dataList = new ArrayList<>();
-
         adapter = new MyAdapter(MainActivity.this, dataList);
         recyclerView.setAdapter(adapter);
 
-
-        /// Verificar comparativo com a classe de armazenamento.
-        String userId = FirebaseAuth.getInstance().getCurrentUser().getUid(); // Obtém o UID do usuário logado
-        databaseReference = FirebaseDatabase.getInstance().getReference("Users").child(userId).child("Pets"); // Altere para o caminho correto
+        // Verifica o usuário logado e obtém o UID para acessar os dados correspondentes no Firebase
+        String userId = firebaseAuth.getCurrentUser().getUid();
+        databaseReference = FirebaseDatabase.getInstance().getReference("Users").child(userId).child("Pets");
 
         dialog.show();
 
         eventListener = databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                dataList.clear(); // Limpa a lista antes de adicionar novos dados
+                dataList.clear();
                 for (DataSnapshot itemSnapshot : snapshot.getChildren()) {
-                    DataClass dataClass = itemSnapshot.getValue(DataClass.class); // Obtém os dados do snapshot
+                    DataClass dataClass = itemSnapshot.getValue(DataClass.class);
                     if (dataClass != null) {
-                        dataClass.setKey(itemSnapshot.getKey()); // Armazena a chave do item
-                        dataList.add(dataClass); // Adiciona o item à lista
+                        dataClass.setKey(itemSnapshot.getKey());
+                        dataList.add(dataClass);
                     }
                 }
-                adapter.notifyDataSetChanged(); // Notifica o adaptador sobre as mudanças
-                dialog.dismiss(); // Fecha o diálogo de carregamento
+                adapter.notifyDataSetChanged();
+                dialog.dismiss();
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                dialog.dismiss(); // Fecha o diálogo em caso de erro
+                dialog.dismiss();
             }
         });
-        ///
 
+        // Listener para a busca
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 return false;
             }
+
             @Override
             public boolean onQueryTextChange(String newText) {
                 searchList(newText);
@@ -102,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Listener para o FloatingActionButton (adiciona um novo pet)
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,16 +118,24 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 
-    public void searchList(String text){
+    // Método para buscar na lista de pets
+    public void searchList(String text) {
         ArrayList<DataClass> searchList = new ArrayList<>();
-        for (DataClass dataClass: dataList){
-            if (dataClass.getDataPetName().toLowerCase().contains(text.toLowerCase())){
+        for (DataClass dataClass : dataList) {
+            if (dataClass.getDataPetName().toLowerCase().contains(text.toLowerCase())) {
                 searchList.add(dataClass);
             }
         }
         adapter.searchDataList(searchList);
+    }
+
+    // Método para realizar logout
+    public void logout() {
+        firebaseAuth.signOut();
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
