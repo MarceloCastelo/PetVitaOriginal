@@ -67,12 +67,39 @@
                 android:textColor="@android:color/black"/>
         </LinearLayout>
 
+        <!-- Botões de Editar e Deletar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="16dp">
+
+            <Button
+                android:id="@+id/editButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Editar"
+                android:layout_marginEnd="16dp"
+                android:backgroundTint="?attr/colorPrimary"
+                android:textColor="@android:color/white"/>
+
+            <Button
+                android:id="@+id/deleteButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deletar"
+                android:backgroundTint="@android:color/holo_red_light"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="334dp"
             android:layout_marginTop="12dp"
             android:orientation="vertical"
-            android:padding="16dp"></LinearLayout>
+            android:padding="16dp">
+        </LinearLayout>
 
     </LinearLayout>
 </ScrollView>
