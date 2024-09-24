@@ -41,19 +41,21 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
         holder.recName.setText(dataList.get(position).getDataPetName());
         holder.recType.setText(dataList.get(position).getDataPetType());
         holder.recGender.setText(dataList.get(position).getDataPetGender());
+
         holder.recCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, DetailActivity.class);
-                intent.putExtra("Image", dataList.get(holder.getAdapterPosition()).getDataImage());
-                intent.putExtra("Type", dataList.get(holder.getAdapterPosition()).getDataPetType());
-                intent.putExtra("Name", dataList.get(holder.getAdapterPosition()).getDataPetName());
-                intent.putExtra("Key",dataList.get(holder.getAdapterPosition()).getKey());
-                intent.putExtra("Gender", dataList.get(holder.getAdapterPosition()).getDataPetGender());
+                intent.putExtra("image_url", dataList.get(holder.getAdapterPosition()).getDataImage());
+                intent.putExtra("tipo_do_animal", dataList.get(holder.getAdapterPosition()).getDataPetType());
+                intent.putExtra("nome_do_animal", dataList.get(holder.getAdapterPosition()).getDataPetName());
+                intent.putExtra("sexo_do_animal", dataList.get(holder.getAdapterPosition()).getDataPetGender());
+                intent.putExtra("Key", dataList.get(holder.getAdapterPosition()).getKey()); // Se necessário
                 context.startActivity(intent);
             }
         });
     }
+
 
     @Override
     public int getItemCount() {
