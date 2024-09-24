@@ -4,6 +4,7 @@ compiler = "4.14.2"
 fab = "1.6.4"
 firebaseFirestore = "25.1.0"
 gbutton = "v1.0.19"
+googleServices = "4.4.2"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
@@ -23,6 +24,7 @@ fab = { module = "com.github.clans:fab", version.ref = "fab" }
 firebase-firestore = { module = "com.google.firebase:firebase-firestore", version.ref = "firebaseFirestore" }
 gbutton = { module = "com.github.TutorialsAndroid:GButton", version.ref = "gbutton" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "compiler" }
+google-services = { module = "com.google.gms:google-services", version.ref = "googleServices" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
