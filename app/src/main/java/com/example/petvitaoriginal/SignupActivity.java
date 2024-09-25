@@ -11,10 +11,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.petvitaoriginal.LoginActivity;
+import com.example.petvitaoriginal.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignupActivity extends AppCompatActivity {
 
@@ -63,20 +67,36 @@ public class SignupActivity extends AppCompatActivity {
                 if (!isValidEmail(user)) {
                     signupEmail.setError("Email invalido.");
                     return;
-                } else{
+                } else {
+                    // Criar o usuário no Firebase Authentication
                     auth.createUserWithEmailAndPassword(user, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                Toast.makeText(SignupActivity.this, "Cadastro concluído", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(SignupActivity.this, LoginActivity.class));
+                                // Usuário criado com sucesso, agora salve os dados no Firebase Realtime Database
+                                String userId = auth.getCurrentUser().getUid();
+                                DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Users").child(userId);
+
+                                // Criação de um objeto com os dados do usuário
+                                User userProfile = new User(name, user, phone);
+                                databaseReference.setValue(userProfile).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if (task.isSuccessful()) {
+                                            Toast.makeText(SignupActivity.this, "Cadastro concluído", Toast.LENGTH_SHORT).show();
+                                            startActivity(new Intent(SignupActivity.this, LoginActivity.class));
+                                            finish(); // Fecha a SignupActivity
+                                        } else {
+                                            Toast.makeText(SignupActivity.this, "Erro ao salvar dados: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                });
                             } else {
-                                Toast.makeText(SignupActivity.this, "Cadastro não realizado" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SignupActivity.this, "Cadastro não realizado: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
                 }
-
             }
         });
 
@@ -86,11 +106,26 @@ public class SignupActivity extends AppCompatActivity {
                 startActivity(new Intent(SignupActivity.this, LoginActivity.class));
             }
         });
-
     }
 
     private boolean isValidEmail(String email) {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 
+    // Classe para armazenar os dados do usuário
+    public static class User {
+        public String name;
+        public String email;
+        public String phone;
+
+        public User() {
+            // Necessário para o Firebase
+        }
+
+        public User(String name, String email, String phone) {
+            this.name = name;
+            this.email = email;
+            this.phone = phone;
+        }
+    }
 }
