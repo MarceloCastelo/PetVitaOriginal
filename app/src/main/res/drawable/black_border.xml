@@ -8,7 +8,7 @@
     <!-- Definindo a borda -->
     <stroke
         android:width="2dp"
-        android:color="?attr/colorPrimaryDark"/>
+        android:color="@color/gray"/>
 
     <!-- Definindo os cantos arredondados -->
     <corners

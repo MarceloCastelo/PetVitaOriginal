@@ -197,6 +197,11 @@ public class UploadActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 Toast.makeText(UploadActivity.this, "Saved", Toast.LENGTH_SHORT).show();
                                 finish();
+
+                                Intent refreshIntent = new Intent(UploadActivity.this, UploadActivity.class);
+                                refreshIntent.putExtra("Key", petKey);
+                                startActivity(refreshIntent);
+                                finish();
                             }
                         }
                     }).addOnFailureListener(new OnFailureListener() {

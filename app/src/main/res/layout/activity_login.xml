@@ -8,6 +8,7 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:gravity="center"
+    android:background="?attr/colorAccent"
     tools:context=".LoginActivity">
 
     <androidx.cardview.widget.CardView
@@ -103,7 +104,7 @@
                 android:layout_gravity="center"
                 android:text="Ainda não tem conta? Registre-se"
                 android:textAlignment="center"
-                android:textColor="?attr/colorPrimaryDark"
+                android:textColor="?attr/colorPrimary"
                 android:textSize="14sp"/>
 
         </LinearLayout>
