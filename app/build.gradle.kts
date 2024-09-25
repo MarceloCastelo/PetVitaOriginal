@@ -42,6 +42,8 @@ dependencies {
     implementation(libs.firebase.database)
     implementation(libs.firebase.storage)
     testImplementation(libs.junit)
+    implementation (libs.cardview)
+
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 

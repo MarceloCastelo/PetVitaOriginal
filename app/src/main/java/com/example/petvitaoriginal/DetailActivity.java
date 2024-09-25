@@ -48,8 +48,8 @@ public class DetailActivity extends AppCompatActivity {
 
         // Definindo os dados na UI
         detailName.setText(name);
-        detailGender.setText("Sexo: " + gender);
-        detailType.setText("Tipo: " + type);
+        detailGender.setText(gender);
+        detailType.setText(type);
         Glide.with(this).load(imageUrl).into(detailImage);
 
         // Listener para o botão de editar

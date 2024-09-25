@@ -1,105 +1,275 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".DetailActivity">
+    tools:context=".DetailActivity"
+    android:background="@color/white"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center">
+        android:background="@drawable/no_border"
+        android:gravity="center"
+        android:padding="16dp"
 
+        >
+
+        <!-- Nome do Pet -->
         <TextView
+            android:id="@+id/detailName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/detailName"
-            android:text="Nome do Pet"
             android:layout_marginTop="16dp"
+            android:text="Nome do Pet"
             android:textSize="28sp"
             android:textStyle="bold"
             android:textAlignment="center"
             android:textColor="?attr/colorPrimary"
             android:layout_gravity="center"/>
 
+        <!-- Imagem do Pet -->
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="200dp"
             android:id="@+id/detailImage"
+            android:layout_width="wrap_content"
+            android:layout_height="160dp"
             android:padding="8dp"
             android:layout_gravity="center"
             android:src="@drawable/baseline_pets_24"
             android:scaleType="centerCrop"
             android:adjustViewBounds="true"/>
 
+        <!-- Informações sobre o pet -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="16dp"
+            android:padding="2dp"
             android:layout_marginTop="12dp"
-            android:weightSum="2">
+            android:weightSum="2"
+
+            >
 
             <TextView
+                android:id="@+id/detailGender"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginEnd="8dp"
                 android:padding="12dp"
-                android:text="Sexo: Macho"
-                android:id="@+id/detailGender"
+                android:text="Macho"
+                android:textAlignment="center"
                 android:textSize="18sp"
-                android:textColor="@android:color/black"/>
+                android:textColor="@android:color/black"
+                />
 
             <TextView
+                android:id="@+id/detailType"
+                android:textAlignment="center"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginStart="8dp"
                 android:padding="12dp"
-                android:text="Tipo: Cachorro"
-                android:id="@+id/detailType"
+                android:text="Cachorro"
                 android:textSize="18sp"
                 android:textColor="@android:color/black"/>
         </LinearLayout>
 
-        <!-- Botões de Editar e Deletar -->
+        <!-- Cards para Exames, Consultas, Procedimentos e Vacinas -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp">
+
+            <!-- Card Consulta -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="6dp">
+
+                <!-- Layout para organizar o ícone e o texto -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
+
+                    <!-- Ícone de Consulta -->
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/consulta_24"
+                        android:layout_marginEnd="8dp"/>
+
+                    <!-- Texto Consulta -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Consultas"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorPrimary"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card Exames -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="6dp">
+
+                <!-- Layout para organizar o ícone e o texto -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
+
+                    <!-- Ícone de Consulta -->
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/exame_24"
+                        android:layout_marginEnd="8dp"/>
+
+                    <!-- Texto Consulta -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Exames"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorPrimary"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card Procedimentos -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="6dp">
+
+                <!-- Layout para organizar o ícone e o texto -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
+
+                    <!-- Ícone de Consulta -->
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/procedimentos_24"
+                        android:layout_marginEnd="8dp"/>
+
+                    <!-- Texto Consulta -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Procedimentos"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorPrimary"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card Vacinas -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="6dp">
+
+                <!-- Layout para organizar o ícone e o texto -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
+
+                    <!-- Ícone de Consulta -->
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/vacinas_24"
+                        android:layout_marginEnd="8dp"/>
+
+                    <!-- Texto Consulta -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Vacinas"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorPrimary"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <!-- Botões de Editar e Deletar no final da página -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            android:layout_marginTop="16dp">
+            android:layout_marginTop="12dp">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/editButton"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="Editar"
                 android:layout_marginEnd="16dp"
-                android:backgroundTint="?attr/colorPrimary"
+                app:backgroundTint="?attr/colorPrimary"
+                app:strokeColor="@android:color/transparent"
+                app:icon="@drawable/baseline_edit_24"
+                app:iconGravity="textStart"
+                app:iconPadding="4dp"
+                app:iconTint="@android:color/white"
                 android:textColor="@android:color/white"/>
 
-            <Button
+
+
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/deleteButton"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="Deletar"
-                android:backgroundTint="@android:color/holo_red_light"
+                app:backgroundTint="@android:color/holo_red_light"
+                app:strokeColor="@android:color/transparent"
+                app:icon="@drawable/baseline_delete_24"
+                app:iconGravity="textStart"
+                app:iconPadding="4dp"
+                app:iconTint="@android:color/white"
                 android:textColor="@android:color/white"/>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="334dp"
-            android:layout_marginTop="12dp"
-            android:orientation="vertical"
-            android:padding="16dp">
-        </LinearLayout>
 
     </LinearLayout>
-</ScrollView>
+</androidx.core.widget.NestedScrollView>
