@@ -52,6 +52,36 @@ public class DetailActivity extends AppCompatActivity {
         detailType.setText(type);
         Glide.with(this).load(imageUrl).into(detailImage);
 
+
+        // Configurar os listeners dos cards
+        findViewById(R.id.cardConsultas).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DetailActivity.this, ConsultasActivity.class));
+            }
+        });
+
+        findViewById(R.id.cardExames).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DetailActivity.this, ExamesActivity.class));
+            }
+        });
+
+        findViewById(R.id.cardProcedimentos).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DetailActivity.this, ProcedimentosActivity.class));
+            }
+        });
+
+        findViewById(R.id.cardVacinas).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DetailActivity.this, VacinasActivity.class));
+            }
+        });
+
         // Listener para o botão de editar
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,5 +141,8 @@ public class DetailActivity extends AppCompatActivity {
                         Toast.makeText(DetailActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
+
+
+
     }
 }

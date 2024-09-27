@@ -17,6 +17,18 @@
         android:theme="@style/Theme.PetVitaOriginal"
         tools:targetApi="31">
         <activity
+            android:name=".VacinasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProcedimentosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ExamesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConsultasActivity"
+            android:exported="false" />
+        <activity
             android:name=".ProfileActivity"
             android:exported="false" />
         <activity
