@@ -19,7 +19,7 @@ import java.util.List;
 public class VacinasActivity extends AppCompatActivity {
     private RecyclerView recyclerViewVacinas;
     private VacinaAdapter vacinaAdapter;
-    private List<String> listaVacinas;
+    private List<Vacina> listaVacinas; // Alterado para lista de objetos Vacina
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +75,7 @@ public class VacinasActivity extends AppCompatActivity {
                 String dataVacina = editTextDataVacina.getText().toString();
 
                 // Adiciona a vacina na lista
-                adicionarVacina(nomeVacina + " - " + descricaoVacina + " (" + dataVacina + ")");
+                adicionarVacina(nomeVacina, descricaoVacina, dataVacina);
             }
         });
 
@@ -106,8 +106,10 @@ public class VacinasActivity extends AppCompatActivity {
         datePickerDialog.show(); // Mostra o DatePickerDialog
     }
 
-    private void adicionarVacina(String vacina) {
-        listaVacinas.add(vacina);
+    private void adicionarVacina(String nome, String descricao, String data) {
+        // Cria uma nova instância de Vacina
+        Vacina novaVacina = new Vacina(nome, data, descricao);
+        listaVacinas.add(novaVacina);
         vacinaAdapter.notifyItemInserted(listaVacinas.size() - 1);
         recyclerViewVacinas.scrollToPosition(listaVacinas.size() - 1); // Rolagem para a nova vacina
     }

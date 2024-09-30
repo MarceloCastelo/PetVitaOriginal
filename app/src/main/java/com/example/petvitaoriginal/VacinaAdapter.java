@@ -7,25 +7,31 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.imageview.ShapeableImageView;
+
 import java.util.List;
 
 public class VacinaAdapter extends RecyclerView.Adapter<VacinaAdapter.VacinaViewHolder> {
-    private List<String> vacinas;
+    private List<Vacina> vacinas; // Alterado para usar a lista de Vacina
 
-    public VacinaAdapter(List<String> vacinas) {
+    public VacinaAdapter(List<Vacina> vacinas) {
         this.vacinas = vacinas;
     }
 
     @NonNull
     @Override
     public VacinaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(android.R.layout.simple_list_item_1, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_vacinas , parent, false); // Inflar o layout do item de vacina
         return new VacinaViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull VacinaViewHolder holder, int position) {
-        holder.textView.setText(vacinas.get(position));
+        Vacina vacina = vacinas.get(position);
+        holder.vacName.setText(vacina.getNome());
+        holder.vacDate.setText(vacina.getData());
+        holder.vacDesc.setText(vacina.getDescricao());
+        // Aqui você pode definir a imagem usando um carregador de imagens, como Glide ou Picasso
     }
 
     @Override
@@ -34,11 +40,15 @@ public class VacinaAdapter extends RecyclerView.Adapter<VacinaAdapter.VacinaView
     }
 
     static class VacinaViewHolder extends RecyclerView.ViewHolder {
-        TextView textView;
+        TextView vacName, vacDate, vacDesc;
+        ShapeableImageView recImage;
 
-        VacinaViewHolder(@NonNull View itemView) {
+        public VacinaViewHolder(@NonNull View itemView) {
             super(itemView);
-            textView = itemView.findViewById(android.R.id.text1);
+            vacName = itemView.findViewById(R.id.vacName);
+            vacDate = itemView.findViewById(R.id.vacDate);
+            vacDesc = itemView.findViewById(R.id.vacDesc);
+            recImage = itemView.findViewById(R.id.recImage);
         }
     }
 }

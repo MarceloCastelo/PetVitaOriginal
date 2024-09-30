@@ -28,8 +28,8 @@
         android:textSize="18sp"
         android:layout_marginBottom="8dp" />
 
-    <ListView
-        android:id="@+id/examHistoryList"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/examHistoryRecycler"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />

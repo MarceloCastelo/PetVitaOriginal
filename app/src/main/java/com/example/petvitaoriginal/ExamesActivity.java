@@ -5,19 +5,21 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.CalendarView;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.ArrayList;
 
 public class ExamesActivity extends AppCompatActivity {
     private CalendarView calendarView;
-    private ListView examHistoryList;
-    private ArrayList<String> examHistory;
-    private ArrayAdapter<String> adapter;
+    private RecyclerView examHistoryRecycler;
+    private ExamHistoryAdapter adapter;
+    private ArrayList<Exam> examHistory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,11 +27,12 @@ public class ExamesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_exames);
 
         calendarView = findViewById(R.id.calendarView);
-        examHistoryList = findViewById(R.id.examHistoryList);
+        examHistoryRecycler = findViewById(R.id.examHistoryRecycler);
+        examHistoryRecycler.setLayoutManager(new LinearLayoutManager(this));
 
         examHistory = new ArrayList<>();
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, examHistory);
-        examHistoryList.setAdapter(adapter);
+        adapter = new ExamHistoryAdapter(examHistory);
+        examHistoryRecycler.setAdapter(adapter);
 
         // Setup listener for calendar date changes
         calendarView.setOnDateChangeListener((view, year, month, dayOfMonth) -> {
@@ -56,7 +59,8 @@ public class ExamesActivity extends AppCompatActivity {
 
             // Adiciona o exame ao histórico
             if (!title.isEmpty()) {
-                examHistory.add(dateString + ": " + title + " - " + description);
+                Exam exam = new Exam(title, dateString, description);
+                examHistory.add(exam);
                 adapter.notifyDataSetChanged();
                 Toast.makeText(ExamesActivity.this, "Exame salvo!", Toast.LENGTH_SHORT).show();
             } else {

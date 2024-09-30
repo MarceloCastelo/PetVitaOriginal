@@ -3,20 +3,42 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="top"
+    android:padding="16dp"
+    android:background="@color/white">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Procedimentos"
-        android:textSize="24sp"/>
+        android:textSize="24sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:textColor="?attr/colorPrimary"
+        />
 
-    <!-- Botão para importar PDF -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aqui você pode importar um documento em PDF relacionado aos procedimentos do seu pet."
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp"
+        android:gravity="start"
+       android:textColor="@color/gray"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
     <Button
         android:id="@+id/pdf_importer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Importar PDF"/>
+        android:text="Importar PDF"
+        android:layout_gravity="center"
+        style="@style/ButtonStyle"
+        android:layout_marginBottom="16dp"/>
 
 </LinearLayout>
