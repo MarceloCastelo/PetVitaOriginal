@@ -1,10 +1,9 @@
-package com.example.petvitaoriginal;
+package com.example.petvitaoriginal.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -14,6 +13,10 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.petvitaoriginal.adapter.MyAdapter;
+import com.example.petvitaoriginal.R;
+import com.example.petvitaoriginal.adapter.ProfileActivity;
+import com.example.petvitaoriginal.classes.DataClass;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;

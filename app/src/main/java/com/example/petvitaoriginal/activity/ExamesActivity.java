@@ -1,7 +1,6 @@
-package com.example.petvitaoriginal;
+package com.example.petvitaoriginal.activity;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +11,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.petvitaoriginal.adapter.ExamHistoryAdapter;
+import com.example.petvitaoriginal.R;
+import com.example.petvitaoriginal.classes.Exam;
 
 import java.util.ArrayList;
 

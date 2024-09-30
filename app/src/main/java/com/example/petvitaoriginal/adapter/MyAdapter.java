@@ -1,4 +1,4 @@
-package com.example.petvitaoriginal;
+package com.example.petvitaoriginal.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,6 +13,9 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.petvitaoriginal.R;
+import com.example.petvitaoriginal.activity.DetailActivity;
+import com.example.petvitaoriginal.classes.DataClass;
 
 import java.util.ArrayList;
 import java.util.List;

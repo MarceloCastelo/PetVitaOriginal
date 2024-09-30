@@ -1,4 +1,4 @@
-package com.example.petvitaoriginal;
+package com.example.petvitaoriginal.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +7,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.petvitaoriginal.R;
+import com.example.petvitaoriginal.classes.Vacina;
 import com.google.android.material.imageview.ShapeableImageView;
 
 import java.util.List;

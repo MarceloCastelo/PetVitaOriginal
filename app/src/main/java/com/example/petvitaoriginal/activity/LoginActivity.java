@@ -1,4 +1,4 @@
-package com.example.petvitaoriginal;
+package com.example.petvitaoriginal.activity;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -21,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.developer.gbuttons.GoogleSignInButton;
+import com.example.petvitaoriginal.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;

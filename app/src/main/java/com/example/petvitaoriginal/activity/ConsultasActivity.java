@@ -1,4 +1,4 @@
-package com.example.petvitaoriginal;
+package com.example.petvitaoriginal.activity;
 
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -8,6 +8,9 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.petvitaoriginal.R;
+import com.example.petvitaoriginal.adapter.ConsultasAdapter;
 
 import java.util.ArrayList;
 

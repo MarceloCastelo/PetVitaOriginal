@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     android:background="?attr/colorPrimaryDark"
-    tools:context=".UploadActivity">
+    tools:context=".activity.UploadActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"

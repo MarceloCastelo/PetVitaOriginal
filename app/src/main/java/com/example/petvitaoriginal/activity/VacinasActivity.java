@@ -1,4 +1,4 @@
-package com.example.petvitaoriginal;
+package com.example.petvitaoriginal.activity;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
@@ -11,6 +11,10 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.petvitaoriginal.R;
+import com.example.petvitaoriginal.adapter.VacinaAdapter;
+import com.example.petvitaoriginal.classes.Vacina;
 
 import java.util.ArrayList;
 import java.util.Calendar;

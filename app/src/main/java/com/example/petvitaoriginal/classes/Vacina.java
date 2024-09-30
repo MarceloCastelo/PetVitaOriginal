@@ -1,4 +1,4 @@
-package com.example.petvitaoriginal;
+package com.example.petvitaoriginal.classes;
 
 public class Vacina {
     private String nome;

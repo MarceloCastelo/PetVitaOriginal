@@ -17,37 +17,37 @@
         android:theme="@style/Theme.PetVitaOriginal"
         tools:targetApi="31">
         <activity
-            android:name=".ParceirosActivity"
+            android:name=".activity.ParceirosActivity"
             android:exported="false" />
         <activity
-            android:name=".QuemSomosActivity"
+            android:name=".activity.QuemSomosActivity"
             android:exported="false" />
         <activity
-            android:name=".SuporteActivity"
+            android:name=".activity.SuporteActivity"
             android:exported="false" />
         <activity
-            android:name=".VacinasActivity"
+            android:name=".activity.VacinasActivity"
             android:exported="false" />
         <activity
-            android:name=".ProcedimentosActivity"
+            android:name=".activity.ProcedimentosActivity"
             android:exported="false" />
         <activity
-            android:name=".ExamesActivity"
+            android:name=".activity.ExamesActivity"
             android:exported="false" />
         <activity
-            android:name=".ConsultasActivity"
+            android:name=".activity.ConsultasActivity"
             android:exported="false" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".adapter.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".DetailActivity"
+            android:name=".activity.DetailActivity"
             android:exported="false" />
         <activity
-            android:name=".UploadActivity"
+            android:name=".activity.UploadActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".activity.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -56,10 +56,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SignupActivity"
+            android:name=".activity.SignupActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="true" />
     </application>
 
