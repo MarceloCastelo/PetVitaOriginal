@@ -3,12 +3,30 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <TextView
+    <!-- Input para adicionar nova consulta -->
+    <EditText
+        android:id="@+id/editTextConsulta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Adicionar nova consulta" />
+
+    <!-- Botão para adicionar consulta -->
+    <Button
+        android:id="@+id/buttonAddConsulta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tela de Consultas"
-        android:textSize="24sp"/>
+        android:text="Adicionar"
+        android:layout_gravity="end"
+        />
+
+    <!-- RecyclerView para exibir a lista de consultas -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewConsultas"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp"/>
 </LinearLayout>

@@ -11,4 +11,12 @@
         android:layout_height="wrap_content"
         android:text="Procedimentos"
         android:textSize="24sp"/>
+
+    <!-- Botão para importar PDF -->
+    <Button
+        android:id="@+id/pdf_importer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Importar PDF"/>
+
 </LinearLayout>
