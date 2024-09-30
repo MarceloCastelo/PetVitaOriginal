@@ -54,4 +54,9 @@ dependencies {
     annotationProcessor (libs.compiler)
     implementation (libs.fab)
 
+    implementation (libs.appcompat.v131)
+    implementation (libs.drawerlayout)
+
+
+
 }

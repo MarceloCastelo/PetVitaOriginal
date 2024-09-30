@@ -2,12 +2,15 @@ package com.example.petvitaoriginal;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -32,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     MyAdapter adapter;
     SearchView searchView;
     FirebaseAuth firebaseAuth; // Declaração do FirebaseAuth
+    DrawerLayout drawerLayout; // Declaração do DrawerLayout
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // Configuração dos componentes da interface
+        drawerLayout = findViewById(R.id.drawer_layout); // Inicializa o DrawerLayout
         fab = findViewById(R.id.fab);
         recyclerView = findViewById(R.id.recyclerView);
         searchView = findViewById(R.id.search);
@@ -125,6 +130,43 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        // Listener para o ícone de menu
+        findViewById(R.id.menu_icon).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Abre o Drawer quando o menu for clicado
+                drawerLayout.openDrawer(Gravity.LEFT);
+            }
+        });
+
+        // Listeners para os itens do menu
+        findViewById(R.id.item_quem_somos).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, QuemSomosActivity.class);
+                startActivity(intent);
+                drawerLayout.closeDrawer(Gravity.LEFT); // Fecha o Drawer após a seleção
+            }
+        });
+
+        findViewById(R.id.item_parceiros).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ParceirosActivity.class);
+                startActivity(intent);
+                drawerLayout.closeDrawer(Gravity.LEFT); // Fecha o Drawer após a seleção
+            }
+        });
+
+        findViewById(R.id.item_suporte).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SuporteActivity.class);
+                startActivity(intent);
+                drawerLayout.closeDrawer(Gravity.LEFT); // Fecha o Drawer após a seleção
             }
         });
     }

@@ -1,7 +1,9 @@
 [versions]
 agp = "8.5.1"
+androidxAppcompat = "1.3.1"
 cardview = "1.0.0"
 compiler = "4.14.2"
+drawerlayout = "1.2.0"
 fab = "1.6.4"
 firebaseFirestore = "25.1.0"
 gbutton = "v1.0.19"
@@ -20,8 +22,10 @@ firebaseDatabase = "21.0.0"
 firebaseStorage = "21.0.0"
 
 [libraries]
+appcompat-v131 = { module = "androidx.appcompat:appcompat", version.ref = "androidxAppcompat" }
 cardview = { module = "androidx.cardview:cardview", version.ref = "cardview" }
 compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "compiler" }
+drawerlayout = { module = "androidx.drawerlayout:drawerlayout", version.ref = "drawerlayout" }
 fab = { module = "com.github.clans:fab", version.ref = "fab" }
 firebase-firestore = { module = "com.google.firebase:firebase-firestore", version.ref = "firebaseFirestore" }
 gbutton = { module = "com.github.TutorialsAndroid:GButton", version.ref = "gbutton" }

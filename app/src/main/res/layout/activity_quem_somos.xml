@@ -1,0 +1,148 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quem Somos?"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorPrimary"
+            android:paddingBottom="16dp" />
+
+        <TextView
+            android:id="@+id/textView_missao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Missão"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorPrimaryDark"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:id="@+id/textView_missao_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fundada com o propósito de desenvolver soluções inovadoras que façam a diferença na vida dos nossos usuários, nossa empresa é dedicada a criar produtos que não apenas atendem às necessidades dos nossos usuários, mas que também proporcionam uma experiência intuitiva e eficaz, facilitando o cuidado através da tecnologia."
+            android:paddingBottom="16dp"
+            android:textColor="@android:color/black" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/textView_visao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Visão"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorPrimaryDark"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:id="@+id/textView_visao_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ser a líder em desenvolvimento de aplicativos de saúde e cuidados, reconhecida por transformar a maneira como os nossos usuários gerenciam a saúde daqueles que amam, promovendo um futuro mais saudável e conectado para todos."
+            android:paddingBottom="16dp"
+            android:textColor="@android:color/black" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/textView_valores"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Valores"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorPrimaryDark"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:id="@+id/textView_valores_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Inovação: Estamos comprometidos com a criação de soluções tecnológicas de ponta que atendam às necessidades emergentes e melhorem continuamente a experiência do nosso usuário.\n\nEmpatia: Colocamos o bem-estar e as necessidades dos nossos usuários no centro de nosso trabalho, desenvolvendo produtos que oferecem suporte e cuidado genuínos.\n\nConfiabilidade: Garantimos que nossas aplicações sejam seguras e confiáveis, protegendo dados sensíveis e oferecendo uma experiência de uso segura e tranquila."
+            android:paddingBottom="16dp"
+            android:textColor="@android:color/black" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/textView_nossa_abordagem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nossa Abordagem 🚀"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorPrimaryDark"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:id="@+id/textView_nossa_abordagem_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Na VitalCode, acreditamos que a tecnologia deve servir como uma extensão natural dos cuidados pessoais. Trabalhamos em estreita colaboração com profissionais de saúde e usuários finais para entender suas necessidades e desafios, garantindo que nossas soluções sejam práticas, seguras e eficazes. Nosso processo é guiado pela inovação constante e pela busca por excelência, sempre com foco em criar impacto positivo na vida das pessoas."
+            android:paddingBottom="16dp"
+            android:textColor="@android:color/black" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/textView_nosso_compromisso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nosso Compromisso 💪"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorPrimaryDark"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:id="@+id/textView_nosso_compromisso_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estamos comprometidos com a integridade, a empatia e a qualidade em tudo o que fazemos. Nosso objetivo é tornar a gestão da saúde mais acessível e eficiente, promovendo um futuro onde todos possam cuidar de si mesmos de maneira simples e eficaz. Acreditamos no poder da tecnologia para transformar vidas e estamos dedicados a ser uma força positiva nesse processo."
+            android:paddingBottom="16dp"
+            android:textColor="@android:color/black" />
+
+        <!-- Botão para acessar o site -->
+        <Button
+            android:id="@+id/button_acessar_site"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Visite nosso site"
+            android:layout_marginTop="16dp"
+            android:background="?attr/colorAccent"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+</ScrollView>

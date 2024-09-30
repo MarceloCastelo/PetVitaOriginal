@@ -1,0 +1,96 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/background_gradient">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Suporte"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorPrimary"
+            android:paddingBottom="16dp" />
+
+        <TextView
+            android:id="@+id/textView_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Entre em contato para saber mais sobre o projeto."
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:paddingBottom="16dp" />
+
+        <TextView
+            android:id="@+id/textView_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="E-mail: fernando.bento@souunit.com.br"
+            android:textSize="18sp"
+            android:textColor="?attr/colorPrimaryDark"
+            android:paddingBottom="16dp" />
+
+        <Button
+            android:id="@+id/button_enviar_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enviar E-mail"
+            android:layout_marginTop="16dp"
+            android:background="?attr/colorAccent"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/textView_horarios"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Horários de Atendimento 🕒"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorPrimary"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:id="@+id/textView_horarios_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="De segunda a sexta-feira, das 9h às 18h."
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:paddingBottom="16dp" />
+
+        <TextView
+            android:id="@+id/textView_outros_contatos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Outros Contatos 📞"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorPrimary"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:id="@+id/textView_outros_contatos_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Você também pode entrar em contato pelo WhatsApp: (11) 99999-9999"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:paddingBottom="16dp" />
+
+    </LinearLayout>
+</ScrollView>
