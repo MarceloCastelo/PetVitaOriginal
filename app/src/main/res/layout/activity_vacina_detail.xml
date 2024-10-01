@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/nomeVacina"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@color/shamrockGreen"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/tituloDataVacina"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Data da Vacina:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/shamrockGreen"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/dataVacina"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="16dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/tituloNumeroDoses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Número de Doses:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/shamrockGreen"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/numeroDoses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="16dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/tituloDoseAplicada"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dose Aplicada:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/shamrockGreen"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/doseAplicada"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="16dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/tituloNomeVeterinario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Veterinário:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/shamrockGreen"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/nomeVeterinario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="16dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/tituloLote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lote:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/shamrockGreen"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/lote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="16dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/tituloLocal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Local da Aplicação:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/shamrockGreen"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/local"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="16dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/tituloNotas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notas:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/shamrockGreen"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/notas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="16dp"/>
+
+    </LinearLayout>
+</ScrollView>

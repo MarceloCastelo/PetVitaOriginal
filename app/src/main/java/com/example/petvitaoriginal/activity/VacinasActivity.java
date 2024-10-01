@@ -77,23 +77,7 @@ public class VacinasActivity extends AppCompatActivity {
         });
 
         // Botão Salvar
-        builder.setPositiveButton("Salvar", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                String codigoVacina = editTextCodigoVacina.getText().toString();
-                String tipoVacina = editTextTipoVacina.getText().toString();
-                String dataVacina = editTextDataVacina.getText().toString();
-                String numeroTotalDoses = editTextNumeroTotalDoses.getText().toString();
-                String doseAplicada = editTextDoseAplicada.getText().toString();
-                String nomeVeterinario = editTextNomeVeterinario.getText().toString();
-                String loteVacina = editTextLoteVacina.getText().toString();
-                String localAplicacao = editTextLocalAplicacao.getText().toString();
-                String notasAdicionais = editTextNotasAdicionais.getText().toString();
-
-                // Adiciona a vacina na lista
-                adicionarVacina(codigoVacina, tipoVacina, dataVacina, numeroTotalDoses, doseAplicada, nomeVeterinario, loteVacina, localAplicacao, notasAdicionais);
-            }
-        });
+        builder.setPositiveButton("Salvar", null); // Não atribuir a ação ainda
 
         // Botão Cancelar
         builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
@@ -103,7 +87,42 @@ public class VacinasActivity extends AppCompatActivity {
             }
         });
 
-        builder.show(); // Mostra o diálogo
+        // Criar o diálogo
+        AlertDialog dialog = builder.create();
+
+        // Configurando a ação do botão "Salvar"
+        dialog.setOnShowListener(dialogInterface -> {
+            Button btnSalvar = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
+            btnSalvar.setOnClickListener(v -> {
+                String codigoVacina = editTextCodigoVacina.getText().toString().trim();
+                String tipoVacina = editTextTipoVacina.getText().toString().trim();
+                String dataVacina = editTextDataVacina.getText().toString().trim();
+                String numeroTotalDoses = editTextNumeroTotalDoses.getText().toString().trim();
+                String doseAplicada = editTextDoseAplicada.getText().toString().trim();
+                String nomeVeterinario = editTextNomeVeterinario.getText().toString().trim();
+                String loteVacina = editTextLoteVacina.getText().toString().trim();
+                String localAplicacao = editTextLocalAplicacao.getText().toString().trim();
+                String notasAdicionais = editTextNotasAdicionais.getText().toString().trim();
+
+                // Verifica se os campos obrigatórios estão preenchidos
+                if (codigoVacina.isEmpty() || tipoVacina.isEmpty() || dataVacina.isEmpty() ||
+                        numeroTotalDoses.isEmpty() || doseAplicada.isEmpty() || nomeVeterinario.isEmpty() ||
+                        loteVacina.isEmpty() || localAplicacao.isEmpty()) {
+
+                    // Exibe um aviso se algum campo obrigatório estiver vazio
+                    AlertDialog.Builder warningBuilder = new AlertDialog.Builder(VacinasActivity.this);
+                    warningBuilder.setMessage("Por favor, preencha todos os campos obrigatórios.")
+                            .setPositiveButton("OK", null);
+                    warningBuilder.show();
+                } else {
+                    // Adiciona a vacina na lista se todos os campos estiverem preenchidos
+                    adicionarVacina(codigoVacina, tipoVacina, dataVacina, numeroTotalDoses, doseAplicada, nomeVeterinario, loteVacina, localAplicacao, notasAdicionais);
+                    dialog.dismiss(); // Fecha o diálogo se tudo estiver certo
+                }
+            });
+        });
+
+        dialog.show(); // Mostra o diálogo
     }
 
     private void abrirDatePicker(EditText editTextDataVacina) {
