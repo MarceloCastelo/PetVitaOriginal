@@ -23,7 +23,7 @@ import java.util.List;
 public class VacinasActivity extends AppCompatActivity {
     private RecyclerView recyclerViewVacinas;
     private VacinaAdapter vacinaAdapter;
-    private List<Vacina> listaVacinas; // Alterado para lista de objetos Vacina
+    private List<Vacina> listaVacinas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,9 +58,15 @@ public class VacinasActivity extends AppCompatActivity {
         builder.setView(dialogView);
 
         // Referências para os EditTexts
-        EditText editTextNomeVacina = dialogView.findViewById(R.id.editTextNomeVacina);
-        EditText editTextDescricaoVacina = dialogView.findViewById(R.id.editTextDescricaoVacina);
+        EditText editTextCodigoVacina = dialogView.findViewById(R.id.editTextCodigoVacina);
+        EditText editTextTipoVacina = dialogView.findViewById(R.id.editTextTipoVacina);
         EditText editTextDataVacina = dialogView.findViewById(R.id.editTextDataVacina);
+        EditText editTextNumeroTotalDoses = dialogView.findViewById(R.id.editTextNumeroTotalDoses);
+        EditText editTextDoseAplicada = dialogView.findViewById(R.id.editTextDoseAplicada);
+        EditText editTextNomeVeterinario = dialogView.findViewById(R.id.editTextNomeVeterinario);
+        EditText editTextLoteVacina = dialogView.findViewById(R.id.editTextLoteVacina);
+        EditText editTextLocalAplicacao = dialogView.findViewById(R.id.editTextLocalAplicacao);
+        EditText editTextNotasAdicionais = dialogView.findViewById(R.id.editTextNotasAdicionais);
 
         // Abrindo o DatePickerDialog ao clicar no EditText da data
         editTextDataVacina.setOnClickListener(new View.OnClickListener() {
@@ -74,12 +80,18 @@ public class VacinasActivity extends AppCompatActivity {
         builder.setPositiveButton("Salvar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                String nomeVacina = editTextNomeVacina.getText().toString();
-                String descricaoVacina = editTextDescricaoVacina.getText().toString();
+                String codigoVacina = editTextCodigoVacina.getText().toString();
+                String tipoVacina = editTextTipoVacina.getText().toString();
                 String dataVacina = editTextDataVacina.getText().toString();
+                String numeroTotalDoses = editTextNumeroTotalDoses.getText().toString();
+                String doseAplicada = editTextDoseAplicada.getText().toString();
+                String nomeVeterinario = editTextNomeVeterinario.getText().toString();
+                String loteVacina = editTextLoteVacina.getText().toString();
+                String localAplicacao = editTextLocalAplicacao.getText().toString();
+                String notasAdicionais = editTextNotasAdicionais.getText().toString();
 
                 // Adiciona a vacina na lista
-                adicionarVacina(nomeVacina, descricaoVacina, dataVacina);
+                adicionarVacina(codigoVacina, tipoVacina, dataVacina, numeroTotalDoses, doseAplicada, nomeVeterinario, loteVacina, localAplicacao, notasAdicionais);
             }
         });
 
@@ -110,9 +122,9 @@ public class VacinasActivity extends AppCompatActivity {
         datePickerDialog.show(); // Mostra o DatePickerDialog
     }
 
-    private void adicionarVacina(String nome, String descricao, String data) {
+    private void adicionarVacina(String codigo, String tipo, String data, String numeroDoses, String doseAplicada, String nomeVeterinario, String lote, String local, String notas) {
         // Cria uma nova instância de Vacina
-        Vacina novaVacina = new Vacina(nome, data, descricao);
+        Vacina novaVacina = new Vacina(codigo, tipo, data, numeroDoses, doseAplicada, nomeVeterinario, lote, local, notas);
         listaVacinas.add(novaVacina);
         vacinaAdapter.notifyItemInserted(listaVacinas.size() - 1);
         recyclerViewVacinas.scrollToPosition(listaVacinas.size() - 1); // Rolagem para a nova vacina

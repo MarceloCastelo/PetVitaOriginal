@@ -7,29 +7,67 @@
     android:padding="16dp">
 
     <EditText
-        android:id="@+id/editTextNomeVacina"
+        android:id="@+id/editTextCodigoVacina"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nome da Vacina"/>
+        android:hint="Código da Vacina"/>
 
     <EditText
-        android:id="@+id/editTextDescricaoVacina"
+        android:id="@+id/editTextTipoVacina"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Descrição"/>
+        android:hint="Tipo da Vacina (antirrábica, polivalente, etc.)"/>
 
     <EditText
         android:id="@+id/editTextDataVacina"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Data (DD/MM/AAAA)"
-        android:focusable="false"
-        />
+        android:hint="Data da Aplicação (DD/MM/AAAA)"
+        android:focusable="false"/>
+
+    <EditText
+        android:id="@+id/editTextNumeroTotalDoses"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Número Total de Doses"/>
+
+    <EditText
+        android:id="@+id/editTextDoseAplicada"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Dose Aplicada (1ª, 2ª, reforço, etc.)"/>
+
+    <EditText
+        android:id="@+id/editTextNomeVeterinario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome do Veterinário"/>
+
+    <EditText
+        android:id="@+id/editTextLoteVacina"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Lote da Vacina"/>
+
+    <EditText
+        android:id="@+id/editTextLocalAplicacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Local da Aplicação"/>
+
+    <EditText
+        android:id="@+id/editTextNotasAdicionais"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Notas Adicionais (reações adversas, etc.)"
+        android:inputType="textMultiLine"
+        android:minLines="3"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="16dp">
+        <!-- Botões para salvar ou cancelar podem ser adicionados aqui -->
     </LinearLayout>
 </LinearLayout>

@@ -30,9 +30,9 @@ public class VacinaAdapter extends RecyclerView.Adapter<VacinaAdapter.VacinaView
     @Override
     public void onBindViewHolder(@NonNull VacinaViewHolder holder, int position) {
         Vacina vacina = vacinas.get(position);
-        holder.vacName.setText(vacina.getNome());
+        holder.vacName.setText(vacina.getTipo());
         holder.vacDate.setText(vacina.getData());
-        holder.vacDesc.setText(vacina.getDescricao());
+        holder.vacDesc.setText(vacina.getNotas());
         // Aqui você pode definir a imagem usando um carregador de imagens, como Glide ou Picasso
     }
 
