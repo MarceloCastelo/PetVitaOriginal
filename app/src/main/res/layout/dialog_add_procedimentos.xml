@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/editTextTipoProcedimento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tipo de Procedimento (cirurgia, consulta, etc.)"/>
+
+    <EditText
+        android:id="@+id/editTextDataProcedimento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Data do Procedimento (DD/MM/AAAA)"
+        android:focusable="false"/>
+
+    <EditText
+        android:id="@+id/editTextNomeVeterinario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome do Veterinário Responsável"/>
+
+    <EditText
+        android:id="@+id/editTextNotasAdicionais"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Notas Adicionais (medicações prescritas, recomendações pós-operatórias, etc.)"
+        android:inputType="textMultiLine"
+        android:minLines="3"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+        <!-- Botões para salvar ou cancelar podem ser adicionados aqui -->
+    </LinearLayout>
+</LinearLayout>

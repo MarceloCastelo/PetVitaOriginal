@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/recCard"
+    android:id="@+id/procCard"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="16dp"
@@ -15,57 +15,57 @@
         android:padding="12dp">
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/recImage"
+            android:id="@+id/procImage"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginEnd="12dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/vacinas_24"
+            android:src="@drawable/procedimentos_24"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:shapeAppearanceOverlay="@style/roundedImageViewRounded" />
 
         <TextView
-            android:id="@+id/vacName"
+            android:id="@+id/procName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
-            android:text="Nome"
+            android:text="Nome do Procedimento"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@id/recImage"
+            app:layout_constraintStart_toEndOf="@id/procImage"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintBottom_toTopOf="@id/vacDesc" />
+            app:layout_constraintBottom_toTopOf="@id/procDesc" />
 
         <TextView
-            android:id="@+id/vacDesc"
+            android:id="@+id/procDesc"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
-            android:text="comentários"
+            android:text="Comentários"
             android:textColor="@color/gray"
             android:textSize="14sp"
             android:maxLines="1"
             android:ellipsize="end"
-            app:layout_constraintTop_toBottomOf="@id/vacName"
-            app:layout_constraintStart_toEndOf="@id/recImage"
+            app:layout_constraintTop_toBottomOf="@id/procName"
+            app:layout_constraintStart_toEndOf="@id/procImage"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0" />
 
         <TextView
-            android:id="@+id/vacDate"
+            android:id="@+id/procDate"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="29/10/2024"
             android:textColor="@color/gray"
             android:textSize="14sp"
             android:textAlignment="viewEnd"
-            app:layout_constraintTop_toBottomOf="@id/vacDesc"
-            app:layout_constraintStart_toEndOf="@id/recImage"
+            app:layout_constraintTop_toBottomOf="@id/procDesc"
+            app:layout_constraintStart_toEndOf="@id/procImage"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0" />

@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="top"
     android:padding="16dp"
     android:background="@color/white">
 
@@ -13,32 +12,30 @@
         android:layout_height="wrap_content"
         android:text="Procedimentos do Pet"
         android:textSize="24sp"
-        android:layout_marginTop="16dp"
         android:layout_marginBottom="8dp"
-        android:textColor="?attr/colorPrimary"
-        />
+        android:textColor="?attr/colorPrimary"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Aqui você pode importar um documento em PDF relacionado aos procedimentos do seu pet."
+        android:text="Aqui você pode visualizar e gerenciar os procedimentos do seu pet."
         android:textSize="16sp"
         android:layout_marginBottom="16dp"
-        android:gravity="start"
-       android:textColor="@color/gray"/>
+        android:textColor="@color/gray"/>
 
-    <Space
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewProcedimentos"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"/>
 
     <Button
-        android:id="@+id/pdf_importer"
+        android:id="@+id/buttonAddProcedimento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Importar PDF"
+        android:text="Adicionar Procedimento"
         android:layout_gravity="center"
         style="@style/ButtonStyle"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginTop="16dp"/>
 
 </LinearLayout>
