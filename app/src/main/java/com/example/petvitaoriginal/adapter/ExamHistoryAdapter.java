@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -34,7 +35,6 @@ public class ExamHistoryAdapter extends RecyclerView.Adapter<ExamHistoryAdapter.
         holder.vacName.setText(exam.getName());
         holder.vacDate.setText(exam.getDate());
         holder.vacDesc.setText(exam.getDescription());
-        // Se você estiver usando imagens, adicione a lógica para a imagem aqui
     }
 
     @Override

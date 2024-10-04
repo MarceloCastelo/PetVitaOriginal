@@ -11,8 +11,7 @@
         android:layout_height="wrap_content"
         android:text="Calendário de Exames"
         android:textSize="24sp"
-        android:layout_gravity="center"
-        />
+        android:layout_gravity="center" />
 
     <CalendarView
         android:id="@+id/calendarView"
@@ -20,6 +19,23 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp" />
 
+    <!-- Título para Exames Agendados -->
+    <TextView
+        android:id="@+id/scheduledExamsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exames Agendados"
+        android:textSize="18sp"
+        android:layout_marginBottom="8dp" />
+
+    <!-- RecyclerView para Exames Agendados -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/scheduledExamsRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Título para Histórico de Exames -->
     <TextView
         android:id="@+id/historyTitle"
         android:layout_width="wrap_content"
@@ -28,9 +44,11 @@
         android:textSize="18sp"
         android:layout_marginBottom="8dp" />
 
+    <!-- RecyclerView para Histórico de Exames -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/examHistoryRecycler"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
+
 </LinearLayout>
