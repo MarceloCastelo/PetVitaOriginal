@@ -39,19 +39,15 @@ public class ProcedimentoAdapter extends RecyclerView.Adapter<ProcedimentoAdapte
 
         // Define o clique do item
         holder.itemView.setOnClickListener(v -> {
-            // Obtém o contexto do item
             Context context = holder.itemView.getContext();
-            // Cria uma nova Intent para a ProcedimentoDetailActivity
             Intent intent = new Intent(context, ProcedimentoDetailActivity.class);
-            // Passando os dados do procedimento para a Intent
             intent.putExtra("PROCEDIMENTO_TIPO", procedimento.getTipoProcedimento());
             intent.putExtra("PROCEDIMENTO_DATA", procedimento.getDataProcedimento());
-            intent.putExtra("PROCEDIMENTO_VETERINARIO", procedimento.getNomeVeterinario());
-            intent.putExtra("PROCEDIMENTO_NOTAS", procedimento.getNotasAdicionais());
-
-            // Inicia a nova Activity
+            intent.putExtra("PROCEDIMENTO_NOME_VETERINARIO", procedimento.getNomeVeterinario()); // Corrigido
+            intent.putExtra("PROCEDIMENTO_NOTAS_ADICIONAIS", procedimento.getNotasAdicionais()); // Corrigido
             context.startActivity(intent);
         });
+
     }
 
     @Override
