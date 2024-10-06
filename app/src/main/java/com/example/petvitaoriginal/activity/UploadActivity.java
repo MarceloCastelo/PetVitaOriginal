@@ -19,7 +19,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.petvitaoriginal.R;
-import com.example.petvitaoriginal.classes.DataClass;
+import com.example.petvitaoriginal.classes.Pets;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -187,18 +187,18 @@ public class UploadActivity extends AppCompatActivity {
                     .child(userId)
                     .child("Pets").push().getKey(); // Gera uma chave única
 
-            DataClass dataClass = new DataClass(uploadPetName.getText().toString(),
+            Pets pets = new Pets(uploadPetName.getText().toString(),
                     uploadPetType.getText().toString(),
                     uploadPetGender.getText().toString(),
                     imageURL,
-                    newPetKey); // Passa a chave única para o DataClass
+                    newPetKey); // Passa a chave única para o Pets
 
             // Salva os dados no caminho do usuário autenticado
             FirebaseDatabase.getInstance().getReference("Users")
                     .child(userId)  // Usa o UID do usuário como nó
                     .child("Pets")  // Usa um nó adicional para organizar os dados
                     .child(newPetKey)  // Usa a nova chave do pet como identificador do registro
-                    .setValue(dataClass)
+                    .setValue(pets)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {

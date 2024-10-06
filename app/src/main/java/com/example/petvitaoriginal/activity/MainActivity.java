@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.petvitaoriginal.adapter.MyAdapter;
 import com.example.petvitaoriginal.R;
 import com.example.petvitaoriginal.adapter.ProfileActivity;
-import com.example.petvitaoriginal.classes.DataClass;
+import com.example.petvitaoriginal.classes.Pets;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     DatabaseReference databaseReference;
     ValueEventListener eventListener;
     RecyclerView recyclerView;
-    List<DataClass> dataList;
+    List<Pets> dataList;
     MyAdapter adapter;
     SearchView searchView;
     FirebaseAuth firebaseAuth; // Declaração do FirebaseAuth
@@ -88,10 +88,10 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 dataList.clear();
                 for (DataSnapshot itemSnapshot : snapshot.getChildren()) {
-                    DataClass dataClass = itemSnapshot.getValue(DataClass.class);
-                    if (dataClass != null) {
-                        dataClass.setKey(itemSnapshot.getKey());
-                        dataList.add(dataClass);
+                    Pets pets = itemSnapshot.getValue(Pets.class);
+                    if (pets != null) {
+                        pets.setKey(itemSnapshot.getKey());
+                        dataList.add(pets);
                     }
                 }
                 adapter.notifyDataSetChanged();
@@ -176,10 +176,10 @@ public class MainActivity extends AppCompatActivity {
 
     // Método para buscar na lista de pets
     public void searchList(String text) {
-        ArrayList<DataClass> searchList = new ArrayList<>();
-        for (DataClass dataClass : dataList) {
-            if (dataClass.getDataPetName().toLowerCase().contains(text.toLowerCase())) {
-                searchList.add(dataClass);
+        ArrayList<Pets> searchList = new ArrayList<>();
+        for (Pets pets : dataList) {
+            if (pets.getDataPetName().toLowerCase().contains(text.toLowerCase())) {
+                searchList.add(pets);
             }
         }
         adapter.searchDataList(searchList);

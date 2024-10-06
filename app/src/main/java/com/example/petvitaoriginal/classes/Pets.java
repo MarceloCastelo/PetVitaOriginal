@@ -1,6 +1,6 @@
 package com.example.petvitaoriginal.classes;
 
-public class DataClass {
+public class Pets {
 
     private String dataPetName;
     private String dataPetType;
@@ -9,11 +9,11 @@ public class DataClass {
     private String key; // ID único do pet
 
     // Construtor padrão necessário para Firebase
-    public DataClass() {
+    public Pets() {
     }
 
     // Construtor principal
-    public DataClass(String dataPetName, String dataPetType, String dataPetGender, String dataImage) {
+    public Pets(String dataPetName, String dataPetType, String dataPetGender, String dataImage) {
         this.dataPetName = dataPetName;
         this.dataPetType = dataPetType;
         this.dataPetGender = dataPetGender;
@@ -21,7 +21,7 @@ public class DataClass {
     }
 
     // Construtor adicional que inclui a key
-    public DataClass(String dataPetName, String dataPetType, String dataPetGender, String dataImage, String key) {
+    public Pets(String dataPetName, String dataPetType, String dataPetGender, String dataImage, String key) {
         this.dataPetName = dataPetName;
         this.dataPetType = dataPetType;
         this.dataPetGender = dataPetGender;
