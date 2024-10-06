@@ -4,29 +4,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@color/white">
 
-    <!-- Input para adicionar nova consulta -->
-    <EditText
-        android:id="@+id/editTextConsulta"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Adicionar nova consulta" />
-
-    <!-- Botão para adicionar consulta -->
-    <Button
-        android:id="@+id/buttonAddConsulta"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Adicionar"
-        android:layout_gravity="end"
-        />
+        android:text="Consultas do Pet"
+        android:textSize="24sp"
+        android:layout_marginBottom="8dp"
+        android:textColor="?attr/colorPrimary"/>
 
-    <!-- RecyclerView para exibir a lista de consultas -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aqui você pode visualizar e gerenciar as consultas do seu pet."
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp"
+        android:textColor="@color/gray"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewConsultas"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/buttonAddConsulta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Adicionar Consulta"
+        android:layout_gravity="center"
+        style="@style/ButtonStyle"
         android:layout_marginTop="16dp"/>
+
 </LinearLayout>
