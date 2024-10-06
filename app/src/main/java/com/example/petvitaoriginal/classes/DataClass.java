@@ -6,7 +6,7 @@ public class DataClass {
     private String dataPetType;
     private String dataPetGender;
     private String dataImage;
-    private String key; // renomeado para seguir a convenção de nomes
+    private String key; // ID único do pet
 
     // Construtor padrão necessário para Firebase
     public DataClass() {
@@ -20,13 +20,13 @@ public class DataClass {
         this.dataImage = dataImage;
     }
 
-    // Construtor adicional com key
+    // Construtor adicional que inclui a key
     public DataClass(String dataPetName, String dataPetType, String dataPetGender, String dataImage, String key) {
         this.dataPetName = dataPetName;
         this.dataPetType = dataPetType;
         this.dataPetGender = dataPetGender;
         this.dataImage = dataImage;
-        this.key = key;
+        this.key = key; // Inicializa o ID do pet
     }
 
     // Getters

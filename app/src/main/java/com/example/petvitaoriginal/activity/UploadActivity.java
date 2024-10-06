@@ -182,27 +182,28 @@ public class UploadActivity extends AppCompatActivity {
             // Obtém o UID do usuário autenticado
             String userId = user.getUid();
 
+            // Gera uma nova chave única para o pet
+            String newPetKey = FirebaseDatabase.getInstance().getReference("Users")
+                    .child(userId)
+                    .child("Pets").push().getKey(); // Gera uma chave única
+
             DataClass dataClass = new DataClass(uploadPetName.getText().toString(),
                     uploadPetType.getText().toString(),
                     uploadPetGender.getText().toString(),
-                    imageURL);
+                    imageURL,
+                    newPetKey); // Passa a chave única para o DataClass
 
             // Salva os dados no caminho do usuário autenticado
             FirebaseDatabase.getInstance().getReference("Users")
                     .child(userId)  // Usa o UID do usuário como nó
                     .child("Pets")  // Usa um nó adicional para organizar os dados
-                    .child(uploadPetName.getText().toString())  // Usa o nome do pet como identificador do registro
+                    .child(newPetKey)  // Usa a nova chave do pet como identificador do registro
                     .setValue(dataClass)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
-                                Toast.makeText(UploadActivity.this, "Saved", Toast.LENGTH_SHORT).show();
-                                finish();
-
-                                Intent refreshIntent = new Intent(UploadActivity.this, UploadActivity.class);
-                                refreshIntent.putExtra("Key", petKey);
-                                startActivity(refreshIntent);
+                                Toast.makeText(UploadActivity.this, "Salvo com sucesso", Toast.LENGTH_SHORT).show();
                                 finish();
                             }
                         }
@@ -214,7 +215,7 @@ public class UploadActivity extends AppCompatActivity {
                     });
         } else {
             // Se o usuário não estiver autenticado, mostre uma mensagem de erro ou faça outra ação
-            Toast.makeText(UploadActivity.this, "User not authenticated", Toast.LENGTH_SHORT).show();
+            Toast.makeText(UploadActivity.this, "Usuário não autenticado", Toast.LENGTH_SHORT).show();
         }
     }
 }
