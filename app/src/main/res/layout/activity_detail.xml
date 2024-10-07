@@ -34,6 +34,7 @@
             android:layout_gravity="center"/>
 
         <!-- Imagem do Pet -->
+        <!-- Imagem do Pet -->
         <ImageView
             android:id="@+id/detailImage"
             android:layout_width="wrap_content"
@@ -41,8 +42,9 @@
             android:padding="8dp"
             android:layout_gravity="center"
             android:src="@drawable/baseline_pets_24"
-            android:scaleType="centerCrop"
+            android:scaleType="fitCenter"
             android:adjustViewBounds="true"/>
+
 
         <!-- Informações sobre o pet -->
         <LinearLayout

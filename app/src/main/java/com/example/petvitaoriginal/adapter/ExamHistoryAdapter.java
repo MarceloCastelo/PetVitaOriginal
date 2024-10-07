@@ -34,7 +34,6 @@ public class ExamHistoryAdapter extends RecyclerView.Adapter<ExamHistoryAdapter.
         Exam exam = examList.get(position);
         holder.vacName.setText(exam.getName());
         holder.vacDate.setText(exam.getDate());
-        holder.vacDesc.setText(exam.getDescription());
     }
 
     @Override
@@ -45,13 +44,12 @@ public class ExamHistoryAdapter extends RecyclerView.Adapter<ExamHistoryAdapter.
     static class ExamViewHolder extends RecyclerView.ViewHolder {
         TextView vacName;
         TextView vacDate;
-        TextView vacDesc;
+
 
         ExamViewHolder(View itemView) {
             super(itemView);
             vacName = itemView.findViewById(R.id.vacName);
             vacDate = itemView.findViewById(R.id.vacDate);
-            vacDesc = itemView.findViewById(R.id.vacDesc);
         }
     }
 }

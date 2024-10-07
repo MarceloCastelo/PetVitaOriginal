@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/recImage"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="12dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:orientation="vertical">
@@ -51,16 +51,6 @@
                 android:textColor="@color/gray"
                 android:textSize="16sp"
                 android:layout_marginTop="4dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/vacDesc"
-                android:text="comentários"
-                android:textColor="@color/gray"
-                android:textSize="14sp"
-                android:layout_marginTop="4dp"
-                android:maxLines="1" />
         </LinearLayout>
 
     </RelativeLayout>
