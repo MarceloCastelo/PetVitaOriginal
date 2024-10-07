@@ -26,42 +26,42 @@
             android:scaleType="centerCrop"
             app:shapeAppearanceOverlay="@style/roundedImageViewRounded"/>
 
-        <TextView
-            android:layout_width="120dp"
-            android:layout_height="30dp"
-            android:id="@+id/vacName"
-            android:text="Nome"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp"
-            android:layout_toEndOf="@id/recImage"/>
-
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:id="@+id/vacDate"
-            android:text="29/10/2024"
-            android:layout_toEndOf="@id/vacName"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="16dp"
-            android:textAlignment="center"
-            android:textColor="@color/gray"
-            android:textSize="16sp"
-            android:singleLine="true" />
-
-        <TextView
-            android:layout_width="140dp"
             android:layout_height="wrap_content"
-            android:id="@+id/vacDesc"
-            android:text="comentários"
-            android:textColor="@color/gray"
-            android:textSize="14sp"
             android:layout_toEndOf="@id/recImage"
-            android:layout_below="@id/vacName"
             android:layout_marginStart="20dp"
-            android:maxLines="1"
-            android:layout_marginBottom="12dp"/>
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/vacName"
+                android:text="Nome"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/vacDate"
+                android:text="29/10/2024"
+                android:textColor="@color/gray"
+                android:textSize="16sp"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/vacDesc"
+                android:text="comentários"
+                android:textColor="@color/gray"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp"
+                android:maxLines="1" />
+        </LinearLayout>
 
     </RelativeLayout>
 
